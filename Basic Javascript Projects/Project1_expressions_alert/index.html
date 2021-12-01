@@ -6,6 +6,12 @@
     </head>
 
     <body>
+        <p id = "demo" onclick="myFunction()">Click me to change my HTML content(innerHTML).</p>
 
+        <script>
+            function myFunction() {
+                document.getElementById("demo").innerHTML= "Now the content is different!";
+            }
+        </script>
     </body>
 </html>
