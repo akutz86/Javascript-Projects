@@ -10,4 +10,13 @@ function myFunction() { //defining myFunction
     document.getElementById("Concatenate").innerHTML = sentence; //printing concatenated sentence variables
 }
 
+function myFunction1() {
+    document.getElementById("demo").innerHTML = "Hi there"
+}
+
+function myFunction2(p1,p2) {
+    return p1*p2;   
+}
+
+document.getElementById("calculation") = myFunction2(4,3);
 
