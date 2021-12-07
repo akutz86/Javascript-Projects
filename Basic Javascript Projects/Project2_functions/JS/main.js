@@ -11,12 +11,13 @@ function myFunction() { //defining myFunction
 }
 
 function myFunction1() {
-    document.getElementById("demo").innerHTML = "Hi there"
+    document.getElementById("demo").innerHTML = "Hi there";
 }
 
-function myFunction2(p1,p2) {
-    return p1*p2;   
+function math(p1,p2) {
+    document.getElementById("calculate").innerHTML = 4+3;
+    return p1+p2;
 }
 
-document.getElementById("calculation") = myFunction2(4,3);
+
 
