@@ -11,6 +11,7 @@ function getReceipt() {
             text1 = text1+selectedSize+"<br>";
         }
     }
+    //this sets the price for the different sized pizzas
     if (selectedSize === "Personal Pizza") {
         sizeTotal = 6;
     } else if (selectedSize === "Small Pizza") {
@@ -22,6 +23,7 @@ function getReceipt() {
     } else if (selectedSize === "Extra Large Pizza") {
         sizeTotal = 16;
     }
+    //this keeps a running total of the price in the console log
     runningTotal = sizeTotal;
     console.log(selectedSize+" = $"+sizeTotal+".00");
     console.log("size text1: "+text1);
@@ -30,6 +32,7 @@ function getReceipt() {
     getTopping(runningTotal,text1);
 };
 
+//this function adds toppings to the total price, with the first topping being free
 function getTopping(runningTotal,text1) {
     var toppingTotal = 0;
     var selectedTopping = [];
@@ -47,11 +50,13 @@ function getTopping(runningTotal,text1) {
     } else {
         toppingTotal = 0;
     }
+    //this adds the topping price to the price for the size of pizza selected
     runningTotal = (runningTotal + toppingTotal);
     console.log("total selected topping item: " +toppingCount);
     console.log(toppingCount+" topping - 1 free topping = "+"$"+toppingTotal+".00");
     console.log("topping text1: "+text1);
     console.log("Purchase Total: "+"$"+runningTotal+".00");
+    //this prints the price
     document.getElementById("showText").innerHTML=text1;
     document.getElementById("totalPrice").innerHTML="<h3>Total: <strong>$"+runningTotal
     +".00"+"</strong></h3>";
