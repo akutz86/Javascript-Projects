@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+        </script>
+    </head>
+    
+    <script>
+    //check that the html fiel is ready. Start function to append HTML file (add h1, p's)
+    $(document).ready(function() {
+        $("html").append(
+            "<body>\
+                <div id='container'>\
+                    <div id='inner'>\
+                        <h1>Basic jQuery</h1>\
+                        <p id='1'>Paragraph 1</p>\
+                        <p id='2'>Paragraph 2</p>\
+                        <p id='3'>Paragraph 3</p>\
+                    </div>\
+                </div>\
+            </body>"
+        );
+        //set paragraph 2 to font color red
+        $("#2").css({"color":"red"});
+        //when you click on paragraph 3, h1 is hidden
+        $("#3").click(function(){
+            $('h1').hide();
+        });
+        //Introduction effect- hide parapraph 1, one second after page loads
+        $("#1").hide(1000);
+        //when you click on parapraph 2, text is written in the console log the first time. After the second click, the text changes
+        $("#2").one("click", firstClick);
+        function firstClick() {
+            console.log("You just clicked this for the first time!");
+            $( this ).click( function() {
+                console.log("You have clicked this before!");
+            });
+        };
+        });
+    </script>
+</html>
